@@ -1480,20 +1480,24 @@ As conjectured, the tail of
  With the integral above we can consider the very general class
 \begin_inset Formula 
 \[
-H(W)=p(W)e^{-\lambda W}
+H(W)=\sum_{k}a_{k}\frac{\lambda^{k+1}}{\Gamma(k+1)}W^{k}e^{-\lambda W}
 \]
 
 \end_inset
 
-where 
-\begin_inset Formula $p(z)=\sum_{k}a_{k}z^{k}$
+where normalisation requires 
+\begin_inset Formula $\sum_{k}a_{k}=1$
 \end_inset
 
- is any polynomial which is non-negative on the non-negative reals.
+ and unity mean requires 
+\begin_inset Formula $\sum_{k}a_{k}(k+1)/\lambda=1$
+\end_inset
+
+.
  The characteristic function is very helpfully just a sum
 \begin_inset Formula 
 \[
-\phi(u)=\sum_{k}a_{k}k!\left(\lambda-iu\right)^{-k-1}.
+\phi(u)=\sum_{k}a_{k}\left(1-\frac{iu}{\lambda}\right)^{-k-1}.
 \]
 
 \end_inset
@@ -1503,7 +1507,7 @@ Importantly,
 \end_inset
 
  has the same structure, composed of a linear combination of 
-\begin_inset Formula $(\lambda-iu)^{-n}$
+\begin_inset Formula $(1-iu/\lambda)^{-n}$
 \end_inset
 
 .
@@ -1517,10 +1521,10 @@ Importantly,
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
- & \int_{-\infty}^{\infty}e^{i\omega t}\left(\lambda-ie^{t}\right)^{-k-1}dt\\
-= & \lambda^{i\omega-k-1}\int_{0}^{\infty}z^{i\omega-1}(1-iz)^{-k-1}dz\\
-= & \lambda^{i\omega-k-1}e^{-\pi\omega/2}\frac{\Gamma\left(1+k-i\omega\right)\Gamma\left(i\omega\right)}{\Gamma(1+k)}\\
-= & \lambda^{i\omega-k-1}e^{-\pi\omega/2}\frac{\left(1-i\omega\right)_{k}\Gamma(1-i\omega)\Gamma\left(i\omega\right)}{\Gamma(1+k)}
+ & \int_{-\infty}^{\infty}e^{i\omega t}\left(1-\frac{ie^{t}}{\lambda}\right)^{-k-1}dt\\
+= & \lambda^{i\omega}\int_{0}^{\infty}z^{i\omega-1}(1-iz)^{-k-1}dz\\
+= & \lambda^{i\omega}e^{-\pi\omega/2}\frac{\Gamma\left(1+k-i\omega\right)\Gamma\left(i\omega\right)}{\Gamma(1+k)}\\
+= & \lambda^{i\omega}e^{-\pi\omega/2}\Gamma(1-i\omega)\Gamma\left(i\omega\right)\frac{\left(1-i\omega\right)_{k}}{\Gamma(1+k)}
 \end{align*}
 
 \end_inset
@@ -1537,9 +1541,9 @@ reference "eq:backward-eq"
 
 \end_inset
 
-, upon taking the quotient most factors above cancel.
+, upon taking the quotient all but the last factor above cancel.
  Define the auxiliary polynomials 
-\begin_inset Formula $P(z)=\sum_{k}a_{k}k!z^{k}$
+\begin_inset Formula $P(z)=\sum_{k}a_{k}z^{k}$
 \end_inset
 
  and 
@@ -1550,7 +1554,7 @@ reference "eq:backward-eq"
  monomial as 
 \begin_inset Formula 
 \[
-\widehat{z^{k}}\Longrightarrow\frac{\lambda^{-k}(1+z)_{k}}{\Gamma(1+k)}.
+\widehat{z^{k}}\Longrightarrow\frac{(1+z)_{k}}{\Gamma(k+1)}.
 \]
 
 \end_inset
@@ -1586,18 +1590,14 @@ The simplest case is
 \end_inset
 
  which corresponds to 
-\begin_inset Formula $p(z)=1$
-\end_inset
-
-, 
 \begin_inset Formula $\lambda=1$
 \end_inset
 
-, and 
+, 
 \begin_inset Formula $P(z)=1$
 \end_inset
 
-, 
+ and 
 \begin_inset Formula $Q(z)=\frac{1}{z}f(z)$
 \end_inset
 
@@ -1656,15 +1656,11 @@ Another simple case is when
 \end_inset
 
 -distribution; in that case, 
-\begin_inset Formula $p(z)=\frac{\beta^{\beta}}{(\beta-1)!}z^{\beta-1}$
-\end_inset
-
-, 
 \begin_inset Formula $\lambda=\beta$
 \end_inset
 
- so 
-\begin_inset Formula $P(z)=\beta^{\beta}z^{\beta-1}$
+, 
+\begin_inset Formula $P(z)=z^{\beta-1}$
 \end_inset
 
  and 
@@ -1675,7 +1671,7 @@ Another simple case is when
  We get
 \begin_inset Formula 
 \begin{align*}
-\tilde{g}(\omega) & =\frac{\frac{\beta^{\beta}\beta^{-\beta+1}}{\Gamma(\beta)}(1-i\omega)_{\beta-1}}{\sum_{k}p_{k}\frac{\beta^{k\beta}\beta^{-k\beta+1}}{\Gamma(k\beta)}(1-i\omega)_{k\beta-1}}\\
+\tilde{g}(\omega) & =\frac{(1-i\omega)_{\beta-1}/\Gamma(\beta)}{\sum_{k}p_{k}(1-i\omega)_{k\beta-1}/\Gamma(k\beta)}\\
  & =\left[\sum_{k}p_{k}\frac{(\beta-i\omega)_{(k-1)\beta}}{(\beta)_{(k-1)\beta}}\right]^{-1}.
 \end{align*}
 
