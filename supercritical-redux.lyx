@@ -1,0 +1,1960 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass revtex4-1
+\options aps,pre,twocolumn
+\use_default_options false
+\maintain_unincluded_children false
+\language british
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format pdf2
+\output_sync 1
+\bibtex_command default
+\index_command default
+\float_placement h
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Can cell cycle distributions be inferred from clone size distributions?
+\end_layout
+
+\begin_layout Abstract
+
+\series bold
+Probably not.
+
+\series default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "1751-8121-44-49-492001"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+
+\emph on
+In vitro
+\emph default
+ experiments where cells are plated at clonal density may be modelled as
+ a branching process, where each division is independent of all others.
+ It is now routine to accumulate the statistical distribution of the number
+ of progeny (i.e.
+ the clone size) of each initial plated cell.
+ In the theory of super-critical branching processes 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Athreya2004"
+
+\end_inset
+
+, it is well-known that the limit distribution depends on the lifetime distribut
+ion of the particles, i.e.
+ the cell cycle distribution.
+ We therefore seek to infer the cell cycle distribution from the measurable
+ clone size distribution.
+ Concretely, we attempt to invert the relationship between the cell cycle
+ distribution and the clone size distribution, and investigate its stability
+ and (un)suitability as a practical procedure.
+ Along the way we find that not all distributions can arise as the limiting
+ distribution of a super-critical branching process, and we conjecture and
+ prove some properties of them.
+\end_layout
+
+\begin_layout Standard
+Consider an equipotent population of cells which divide independently.
+ This may be modelled as a branching process, defined by specifying the
+ cell cycle distribution be 
+\begin_inset Formula $g(t)$
+\end_inset
+
+ and the branching outcomes of each division, which we package into a generating
+ function 
+\begin_inset Formula $f(s)=\sum_{k}p_{k}s^{k}$
+\end_inset
+
+ where 
+\begin_inset Formula $p_{k}$
+\end_inset
+
+ is the probability for the cell to divide into 
+\begin_inset Formula $k$
+\end_inset
+
+ daughters.
+ We will restrict ourselves to biologically feasible processes, in particular
+ we will require all moments of 
+\begin_inset Formula $f$
+\end_inset
+
+ to exist.
+ Furthermore, we will assume that 
+\begin_inset Formula $p_{0}=0$
+\end_inset
+
+, as it simplifies the consideration by avoiding total death of the clone;
+ for any given 
+\begin_inset Formula $f$
+\end_inset
+
+ we can construct a 
+\begin_inset Formula $f^{\star}$
+\end_inset
+
+ of equal order such that no death occurs, with the only difference being
+ the existence of terminal clones (see appendix
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "app:condition-survival"
+
+\end_inset
+
+).
+ We also exclude certain pathological behaviours from consideration, such
+ as the possibility for a clone to reach infinite size in finite time, which
+ excludes in particular the existence of a Dirac delta spike at zero in
+ 
+\begin_inset Formula $g$
+\end_inset
+
+.
+ We consider in particular the 
+\emph on
+super-critical
+\emph default
+ process, where 
+\begin_inset Formula $f^{\prime}(1)>1$
+\end_inset
+
+ and the expected number of cells diverges exponentially at a rate 
+\begin_inset Formula $\alpha\left[f,g\right]$
+\end_inset
+
+ (the Malthusian parameter of the process), defined by the (only) root of
+ 
+\begin_inset Formula 
+\[
+f^{\prime}(1)\int_{0}^{\infty}e^{-\alpha y}g(y)\, dy=1.
+\]
+
+\end_inset
+
+ In the limit of infinite time, the distribution (normalised to unit mean)
+ of the total number of cells converges to a distribution 
+\begin_inset Formula $H(W)$
+\end_inset
+
+, whose characteristic function 
+\begin_inset Formula $\phi(u)=\mathbb{E}\left[e^{iuW}\right]$
+\end_inset
+
+ is the unique solution (amongst distributions with unit mean) of
+\begin_inset Formula 
+\begin{equation}
+\phi(u)=\int_{0}^{\infty}f\left[\phi\left(ue^{-\alpha y}\right)\right]g(y)\, dy.\label{eq:forwards-eq}
+\end{equation}
+
+\end_inset
+
+Notice that since the constant 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ sets a scale for 
+\begin_inset Formula $g$
+\end_inset
+
+, we may remove it by scaling 
+\begin_inset Formula $g$
+\end_inset
+
+ with no change to the limiting behaviour.
+ Therefore without loss of generality we shall set 
+\begin_inset Formula $\alpha=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We can consider equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:forwards-eq"
+
+\end_inset
+
+ as a family of non-linear transform on the space of distributions over
+ the positive reals, indexed by the generating function 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ It We note two properties (see appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "app:injective-continuity"
+
+\end_inset
+
+) in particular: it is continuous (in 
+\begin_inset Formula $l_{1}$
+\end_inset
+
+-norm), and injective (for a fixed 
+\begin_inset Formula $f$
+\end_inset
+
+, up to scaling of 
+\begin_inset Formula $g$
+\end_inset
+
+).
+ In particular, this implies that if we know the branching of cells (which
+ for biological applications we can obtain by experiment), it is in principle
+ possible to undo the transform and infer the cell cycle length from experimenta
+l clone size distributions.
+ However, as we will show below, this turn out to be overly optimistic.
+\end_layout
+
+\begin_layout Standard
+In passing we note that equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:forwards-eq"
+
+\end_inset
+
+, treated as an iterative procedure, is stable and convergent.
+ However, numerical implementation will have to deal with the inevitable
+ deviation from the manifold of proper characteristic functions.
+ In practice, we find that it is sufficient to use a cubic spline approximation
+ to 
+\begin_inset Formula $\phi$
+\end_inset
+
+, and clamp the boundary at the origin: 
+\begin_inset Formula $\phi(0)=1$
+\end_inset
+
+, 
+\begin_inset Formula $\phi^{\prime}(0)=i$
+\end_inset
+
+.
+ With an initial guess corresponding to an exponential distribution for
+ 
+\begin_inset Formula $H$
+\end_inset
+
+, this reliably converges to a distribution, although the mean often deviates
+ from unity by a few percent.
+ The convergence is fast enough to be interactive and allow numerical experiment
+s, but only just.
+ We show some examples in appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "app:forward-examples"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+To invert the transformation, defining 
+\begin_inset Formula $h(t)=\phi\left(e^{t}\right)$
+\end_inset
+
+ we obtain
+\begin_inset Formula 
+\[
+h(t)=\int_{0}^{\infty}f\left[h\left(t-y\right)\right]g(y)\, dy,
+\]
+
+\end_inset
+
+which is simply a convolution.
+ Proceeding formally, we may take Fourier transforms and obtain the 
+\emph on
+Klein inversion formula
+\emph default
+:
+\begin_inset Formula 
+\begin{equation}
+\tilde{g}(\omega)=\frac{\tilde{h}(\omega)}{\widetilde{f\odot h}(\omega)},\label{eq:backward-eq}
+\end{equation}
+
+\end_inset
+
+ where 
+\begin_inset Formula $f\odot h$
+\end_inset
+
+ is the composition of 
+\begin_inset Formula $h$
+\end_inset
+
+ followed by 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Because 
+\begin_inset Formula $\lim_{t\rightarrow-\infty}h(t)=\phi(0)=1$
+\end_inset
+
+, 
+\begin_inset Formula $h$
+\end_inset
+
+ is not integrable.
+ Furthermore, since 
+\begin_inset Formula $H(W)$
+\end_inset
+
+ considered as a distribution on the entire real line almost certainly has
+ discontinuities in its derivatives at the origin, 
+\begin_inset Formula $\phi(u)$
+\end_inset
+
+ will have algebraic decay for large 
+\begin_inset Formula $u$
+\end_inset
+
+; thus 
+\begin_inset Formula $h(t)=O\left(e^{-ct}\right)$
+\end_inset
+
+ for 
+\begin_inset Formula $t\rightarrow\infty$
+\end_inset
+
+, for some finite 
+\begin_inset Formula $c$
+\end_inset
+
+.
+ Thus the Fourier transform 
+\begin_inset Formula $\tilde{h}$
+\end_inset
+
+ will only converge and thus be defined on the strip 
+\begin_inset Formula $-c<\Im\left(\omega\right)<0$
+\end_inset
+
+ (the strip will be as least as wide for 
+\begin_inset Formula $\widetilde{f\odot h}$
+\end_inset
+
+).
+ Thus for 
+\begin_inset Formula $\tilde{g}$
+\end_inset
+
+ to be well-defined, we require that the quotient in the inversion formula
+ be analytically extended to include the real line, and give a characteristic
+ function on it; in addition, it must be entirely analytic in the lower
+ half-plane in order for 
+\begin_inset Formula $g$
+\end_inset
+
+ to be causal, i.e.
+ 
+\begin_inset Formula $g(t)=0$
+\end_inset
+
+ for 
+\begin_inset Formula $t<0$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+Therefore we are led to study what exactly is the image of the transform
+ in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:forwards-eq"
+
+\end_inset
+
+ (equivalently the domain of the Klein formula).
+ We can show than the tail of 
+\begin_inset Formula $H(W)$
+\end_inset
+
+ is bounded from above by any power-law decay, and conjecture that it is
+ in fact exponential (appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "app:moment-theorems"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Directly applying the Klein formula (appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "app:examples"
+
+\end_inset
+
+), we can reproduce the known results for the exponential (Markovian) process,
+ and the discrete time process.
+ In addition, we can concretely invert the gamma distribution.
+ However, more generally, although formally we can invert distributions
+ of the form 
+\begin_inset Formula $H(W)=p(W)e^{-\lambda W}$
+\end_inset
+
+ where 
+\begin_inset Formula $p$
+\end_inset
+
+ is some polynomial, generically they do not yield proper distributions
+ upon inversion.
+ We conjecture that in the space of distributions, at a generic point in
+ the image of the forwards transforms, almost all directions (i.e.
+ perturbations) lead off the manifold; but nevertheless, there is a countable
+ number of perturbations which remain on it.
+\end_layout
+
+\begin_layout Standard
+Practically, for application to experimental data, the outlook is pessimistic
+ for two reasons.
+ One is that because the transform in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:forwards-eq"
+
+\end_inset
+
+ is continuous, there is not a sharply optimal choice for an inverse that
+ optimises some cost function (likelihood, for instance).
+ In particular, numerical experiments show that changes to 
+\begin_inset Formula $g$
+\end_inset
+
+ which do not significantly change extreme behaviours tends to have negligible
+ effect on the outcome 
+\begin_inset Formula $H$
+\end_inset
+
+.
+ Second is that although the transform is injective, meaning that it is
+ invertible, it depends on having access to the limiting distribution.
+ For interesting problems, such as 
+\begin_inset Formula $g$
+\end_inset
+
+ having power law tails, a real experiment necessarily will fail to probe
+ the tail structure.
+\end_layout
+
+\begin_layout Standard
+More generically (and realistically), we might have multi-type processes.
+ There we encounter the problem that it would be necessary to have access
+ to the limit distributions starting from all the different cell types,
+ which may present a complete barrier to experiments.
+ It is an open question however, about whether one can approximate a multi-type
+ process with a single-type process, by appropriately choosing 
+\begin_inset Formula $f$
+\end_inset
+
+ and 
+\begin_inset Formula $g$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In conclusion, we find that as a practical procedure, the Klein formula
+ (equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:backward-eq"
+
+\end_inset
+
+) is not practical for biological applications.
+ Nevertheless, it is possible to use it to find some novel pairs of limiting
+ distributions and cell cycle lengths, which would otherwise necessitate
+ solving a non-linear integral equation (equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:forwards-eq"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+appendix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "app:condition-survival"
+
+\end_inset
+
+Conditioning on survival
+\end_layout
+
+\begin_layout Standard
+In the limit, the probability for extinction is given by the smallest positive
+ root of 
+\begin_inset Formula $q=f(q)$
+\end_inset
+
+.
+ We can define a new process with 
+\begin_inset Formula 
+\[
+f^{\star}(s)=\frac{f\left[\left(1-q\right)s+q\right]-q}{1-q}
+\]
+
+\end_inset
+
+which will yield the a limit distribution 
+\begin_inset Formula $H^{\star}(W)=(1-q)H(W)+q\delta(W)$
+\end_inset
+
+.
+ Note in particular that 
+\begin_inset Formula $f^{\star}$
+\end_inset
+
+ is a polynomial of the same order as 
+\begin_inset Formula $f$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "app:forward-examples"
+
+\end_inset
+
+Examples of limiting distributions 
+\begin_inset Formula $H(W)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+First, we consider a simple binary fission 
+\begin_inset Formula $f(s)=s^{2}$
+\end_inset
+
+ with 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+-distributed cell cycles
+\begin_inset Formula 
+\[
+g(t)=\frac{\beta^{\beta}t^{\beta-1}e^{-\beta t}}{\Gamma(\beta)}.
+\]
+
+\end_inset
+
+The limiting distributions (
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:g-gamma-limits"
+
+\end_inset
+
+) are remarkably close to being 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+-distributed also, but not quite (inset).
+ As we show in appendix 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "app:examples"
+
+\end_inset
+
+, 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+-distributions are legitimate limiting distributions, but to a slightly
+ different cell cycle distribution.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename gamma-set.pdf
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:g-gamma-limits"
+
+\end_inset
+
+Limit distributions for binary fission with 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+-distributed cell cycle lengths.
+ Inset shows that the limit distributions are very close 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+-distributions, but not exactly.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since the transform in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:forwards-eq"
+
+\end_inset
+
+ is continuous, the limit distribution will not change qualitatively for
+ moderate changes to the cell cycle distribution.
+ In particular, the biologically relevant example of a mono-modal distribution
+ with an initial refractory period is sufficiently close to give very similar
+ limit distributions.
+ In any case, since the right tail is always exponential (appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "app:moment-theorems"
+
+\end_inset
+
+), the only qualitative change possible is the behaviour near the origin,
+ i.e.
+ increase the proportion of clones smaller than the average.
+\end_layout
+
+\begin_layout Standard
+First, we may consider a process where the division of each cell can produce
+ a large number of progeny relative to the average.
+ Specifically, consider 
+\begin_inset Formula 
+\[
+f(s)=\sum_{k=0}^{\infty}\frac{s^{k}}{2^{k}}=\frac{s}{s-2}.
+\]
+
+\end_inset
+
+ For the Markovian process it is possible 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "III.8, theorem 3"
+key "Athreya2004"
+
+\end_inset
+
+ to analytically obtain the limit distribution 
+\begin_inset Formula 
+\[
+H(W)=\frac{1}{2}\left[-1+\frac{2e^{-W/4}}{\sqrt{\pi}\sqrt{W}}+\mathrm{erf}\left(\frac{\sqrt{W}}{2}\right)\right],
+\]
+
+\end_inset
+
+which has a weak divergence at the origin.
+ More intuitively, if we consider the distribution of 
+\begin_inset Formula $\log W$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula 
+\begin{align*}
+J(s)=H\left(e^{s}\right)e^{s} & =\frac{e^{\frac{s}{2}-\frac{e^{s}}{4}}}{\sqrt{\pi}}-\frac{1}{2}e^{s}\mathrm{erfc}\left(\frac{e^{s/2}}{2}\right)\\
+ & \sim\frac{1}{\sqrt{\pi}}e^{s/2}\textrm{, }s\rightarrow-\infty,
+\end{align*}
+
+\end_inset
+
+we see that it still decays exponentially.
+\end_layout
+
+\begin_layout Standard
+Alternatively, we can simply have some cells which divide very slowly.
+ In particular, 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:g-power-limits"
+
+\end_inset
+
+ shows the limit distributions for binary fission with the family 
+\begin_inset Formula 
+\[
+g(t)=\frac{\mathrm{sinc}\left(\frac{n}{\pi}\right)}{1+\left(t-\frac{1}{2}\right)^{n}}\Theta\left(t-\frac{1}{2}\right),\ n\ge2.
+\]
+
+\end_inset
+
+As can be seen in the inset, the corresponding distribution in 
+\begin_inset Formula $\log W$
+\end_inset
+
+ has a power-law tail for small 
+\begin_inset Formula $W$
+\end_inset
+
+, implying a divergence 
+\begin_inset Formula 
+\[
+H(W)\approx\frac{C}{W\log^{n}W},\ W\rightarrow0.
+\]
+
+\end_inset
+
+Notice however, that the local minimum in 
+\begin_inset Formula $H$
+\end_inset
+
+ becomes closer to zero as 
+\begin_inset Formula $n\rightarrow\infty$
+\end_inset
+
+, and the divergence at the origin become more narrow.
+ If we impose an upper-end cut-off to 
+\begin_inset Formula $g(t)$
+\end_inset
+
+, then the divergence is removed, without significant changes to the rest
+ of the curve.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement t
+wide true
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename power-set-W.pdf
+	width 50text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename power-set-log-W.pdf
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:g-power-limits"
+
+\end_inset
+
+Limit distributions for binary fission power-law tailed cell cycles.
+ Left shows the divergence which occurs at 
+\begin_inset Formula $W\rightarrow0$
+\end_inset
+
+.
+ Right shows the distribution of 
+\begin_inset Formula $\log W$
+\end_inset
+
+, which has power-law tails for large negative 
+\begin_inset Formula $\log W$
+\end_inset
+
+ (inset).
+ The very right tail, and the left tail of the inset shows numerical noise;
+ the distributions are uniformly continuous.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "app:injective-continuity"
+
+\end_inset
+
+Injectiveness and continuity of 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:forwards-eq"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Injectiveness
+\end_layout
+
+\begin_layout Standard
+Assume that two different 
+\begin_inset Formula $g_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $g_{2}$
+\end_inset
+
+ give the same 
+\begin_inset Formula $\phi$
+\end_inset
+
+ upon transform with 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:forwards-eq"
+
+\end_inset
+
+.
+ We may assume without loss of generality that their respective Malthusian
+ parameters 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ are equal and unity (if they are not we can simply scale the cell cycle
+ distributions).
+ Then we have
+\begin_inset Formula 
+\[
+\int_{0}^{\infty}f\left[\phi\left(e^{t-y}\right)\right]\left[g_{1}\left(y\right)-g_{2}\left(y\right)\right]dy=0,
+\]
+
+\end_inset
+
+for all 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ Using the convolution theorem we get 
+\begin_inset Formula 
+\[
+\widetilde{f\odot\phi}\left(\omega\right)\left[\tilde{g}_{1}\left(\omega\right)-\tilde{g}_{2}\left(\omega\right)\right]=0
+\]
+
+\end_inset
+
+for 
+\begin_inset Formula $\Im\left\{ \omega\right\} >0$
+\end_inset
+
+, obtaining that 
+\begin_inset Formula $\tilde{g}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\tilde{g}_{2}$
+\end_inset
+
+ are analytic, regular and equal on an open strip.
+ Thus as characteristic functions they are equal, and the original functions
+ 
+\begin_inset Formula $g_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $g_{2}$
+\end_inset
+
+ are equal as distributions.
+\end_layout
+
+\begin_layout Subsection*
+Continuity
+\end_layout
+
+\begin_layout Standard
+Having established injectiveness, and since Fourier transforms are continuous,
+ it is sufficient to establish the continuity of 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:backward-eq"
+
+\end_inset
+
+.
+ Letting 
+\begin_inset Formula $h(t)=h_{0}(t)+\delta h(t)$
+\end_inset
+
+, we get 
+\begin_inset Formula $f\left[h(t)\right]=f\left[h_{0}(t)\right]+\delta h\left(t\right)f^{\prime}\left[h_{0}\left(t\right)\right]$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $0\le h_{0}(t)\le1$
+\end_inset
+
+, 
+\begin_inset Formula $f^{\prime}(s)$
+\end_inset
+
+ is bounded within 
+\begin_inset Formula $0\le s\le1$
+\end_inset
+
+ so define 
+\begin_inset Formula $A=\sup_{t}f^{\prime}\left[h_{0}\left(t\right)\right]$
+\end_inset
+
+.
+ Taking norms of 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:backward-eq"
+
+\end_inset
+
+, we can straightforwardly compute: 
+\begin_inset Formula 
+\begin{align*}
+\left\Vert \widetilde{\delta g}\right\Vert  & =\frac{\left\Vert \tilde{h}_{0}\right\Vert +\left\Vert \widetilde{\delta h}\right\Vert }{\left\Vert \widetilde{f\odot h_{0}}\right\Vert +\left\Vert \widetilde{\delta h\, f^{\prime}\left[h_{0}\right]}\right\Vert }-\left\Vert \tilde{g}_{0}\right\Vert \\
+ & =\left\Vert \widetilde{\delta h}\right\Vert \left\Vert \widetilde{f\odot h_{0}}\right\Vert -\left\Vert \tilde{h}_{0}\right\Vert \left\Vert \widetilde{\delta h\, f^{\prime}\left[h_{0}\right]}\right\Vert +O\left[\left\Vert \widetilde{\delta^{2}h}\right\Vert \right]\\
+ & \le\left\Vert \widetilde{\delta h}\right\Vert \left\{ \left\Vert \widetilde{f\odot h_{0}}\right\Vert +A\left\Vert \tilde{h}_{0}\right\Vert \right\} +O\left[\left\Vert \widetilde{\delta^{2}h}\right\Vert \right].
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "app:moment-theorems"
+
+\end_inset
+
+Of moments and tails
+\end_layout
+
+\begin_layout Standard
+Differentiating equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:forwards-eq"
+
+\end_inset
+
+ we get (via Fa
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+`a
+\end_layout
+
+\end_inset
+
+ di Bruno's formula):
+\end_layout
+
+\begin_layout Wide Text
+\begin_inset Formula 
+\[
+\phi^{(n)}(u)=\int_{0}^{\infty}\left\{ \sum_{\mathbf{k}}\frac{n!}{k_{1}!\cdots k_{n}!}f^{(k)}\left[\phi\left(ue^{-y}\right)\right]\left[\frac{\phi^{(1)}\left(ue^{-y}\right)e^{-y}}{1!}\right]^{k_{1}}\cdots\left[\frac{\phi^{(n)}\left(ue^{-y}\right)e^{-ny}}{n!}\right]^{k_{n}}\right\} g(y)\, dy
+\]
+
+\end_inset
+
+where the summation runs over all partitions of 
+\begin_inset Formula $n$
+\end_inset
+
+ such that 
+\begin_inset Formula $k_{1}+2k_{2}+\cdots+nk_{n}=n$
+\end_inset
+
+ and 
+\begin_inset Formula $k=k_{1}+\cdots+k_{n}$
+\end_inset
+
+.
+ Recognising these as moments (up to factors of 
+\begin_inset Formula $i$
+\end_inset
+
+ which may be removed without loss of generality by picking the right boundary
+ conditions for 
+\begin_inset Formula $\phi$
+\end_inset
+
+) gives (using the fact that 
+\begin_inset Formula $M_{0}=\phi(0)=1$
+\end_inset
+
+): 
+\begin_inset Formula 
+\begin{equation}
+M_{n}=\sum_{\mathbf{k}}\frac{n!}{k_{1}!\cdots k_{n}!}f^{(k)}\left(1\right)\left(\frac{M_{1}}{1!}\right)^{k_{1}}\cdots\left(\frac{M_{n}}{n!}\right)^{k_{n}}\int_{0}^{\infty}e^{-ny}g(y)\, dy.\label{eq:moment-recursion}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since we assumed that all moments of 
+\begin_inset Formula $f$
+\end_inset
+
+ exist, 
+\begin_inset Formula $f^{(k)}(1)$
+\end_inset
+
+ will also exist.
+ Noticing that there is only one partition with 
+\begin_inset Formula $k_{n}=1$
+\end_inset
+
+, we can move that term to the left hand side and we get for 
+\begin_inset Formula $n\ge2$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+M_{n}\left[1-\int_{0}^{\infty}f^{\prime}(1)e^{-ny}g(y)\, dy\right]=C\left[M_{1},\ldots,M_{n-1}\right],
+\]
+
+\end_inset
+
+where the right hand side only depends on the lower moments, and in particular
+ is finite if all the lower moments are finite.
+ Then
+\begin_inset Formula 
+\[
+1=\int_{0}^{\infty}f^{\prime}(1)e^{-y}g(y)\, dy<\int_{0}^{\infty}f^{\prime}(1)e^{-ny}g(y)\, dy
+\]
+
+\end_inset
+
+and since 
+\begin_inset Formula $M_{1}=1$
+\end_inset
+
+ is finite, by induction all moments exist.
+ Thus, applying Chebychev's inequality we get 
+\begin_inset Formula $H(W)\in o\left(W^{-\alpha}\right)$
+\end_inset
+
+ for all 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+We now outline a plausible argument that the tails are also bounded from
+ below by an exponential.
+ Although we do not have proofs, it seems reasonable that some morally similar
+ statements must be true.
+ First, it seems plausible that if two non-negative variables 
+\begin_inset Formula $W_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $W_{2}$
+\end_inset
+
+ have moments obeying
+\begin_inset Formula 
+\[
+\mathbb{E}\left[W_{1}^{n}\right]\ge\mathbb{E}\left[W_{2}^{n}\right]
+\]
+
+\end_inset
+
+ for all 
+\begin_inset Formula $n$
+\end_inset
+
+, then there exists a 
+\begin_inset Formula $w$
+\end_inset
+
+ such that 
+\begin_inset Formula 
+\[
+\mathbb{P}\left[W_{1}>w\right]>\mathbb{P}\left[W_{2}>w\right].
+\]
+
+\end_inset
+
+ Second, if the moments 
+\begin_inset Formula $\log\mathbb{E}\left[W^{n}\right]\in n\log n+\Theta(n)$
+\end_inset
+
+ for large 
+\begin_inset Formula $n$
+\end_inset
+
+ then the tail 
+\begin_inset Formula $\mathbb{P}\left[W>w\right]$
+\end_inset
+
+ is exponential, in some sense.
+ In particular, previous work 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Abate1996"
+
+\end_inset
+
+ suggests that if the limits 
+\begin_inset Formula 
+\[
+\eta_{n}=\frac{n\mathbb{E}\left[W^{n-1}\right]}{\mathbb{E}\left[W^{n}\right]}\rightarrow\eta
+\]
+
+\end_inset
+
+ and 
+\begin_inset Formula 
+\[
+A_{n}=\frac{\eta_{n}^{n}\mathbb{E}\left[W^{n}\right]}{n!}\rightarrow A
+\]
+
+\end_inset
+
+ exist, then 
+\begin_inset Formula 
+\[
+\lim_{w\rightarrow\infty}e^{\eta w}\mathbb{P}\left[W>w\right]=A.
+\]
+
+\end_inset
+
+ Finally, we consider equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:moment-recursion"
+
+\end_inset
+
+ and drop all terms higher than quadratic
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{M_{n}}{n!}\ge\sum_{k=1}^{n-1}\frac{M_{k}M_{n-k}}{k!(n-k)!}\frac{f^{\prime\prime}(1)\int_{0}^{\infty}e^{-ny}g(y)\, dy}{1-f^{\prime}(1)\int_{0}^{\infty}e^{-ny}g(y)\, dy}
+\]
+
+\end_inset
+
+which follows as each term in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:moment-recursion"
+
+\end_inset
+
+ is positive.
+ We can think of this as a new branching process for which that recurrence
+ relation is exact, which corresponds to a binary fission process with possible
+ death.
+ That process has moments 
+\begin_inset Formula $M_{n}^{\star}=n!\xi(n)$
+\end_inset
+
+ with
+\begin_inset Formula 
+\[
+\xi(n)=\sum_{k=1}^{n-1}\xi(k)\xi(n-k)\frac{f^{\prime\prime}(1)\int_{0}^{\infty}e^{-ny}g(y)\, dy}{1-f^{\prime}(1)\int_{0}^{\infty}e^{-ny}g(y)\, dy}.
+\]
+
+\end_inset
+
+ Asymptotically, the Laplace transform of 
+\begin_inset Formula $g$
+\end_inset
+
+ decays as 
+\begin_inset Formula $n\rightarrow\infty$
+\end_inset
+
+ and thus 
+\begin_inset Formula $\xi$
+\end_inset
+
+ is bounded by an exponential.
+ Thus, we conclude that the process with moments 
+\begin_inset Formula $M_{n}^{\star}$
+\end_inset
+
+ has an exponential tail.
+\end_layout
+
+\begin_layout Standard
+Making proper estimates of the moments would allow applying the moments
+ bound 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Philips1995"
+
+\end_inset
+
+, which in general produces exponential upper bounds for the tail, and would
+ likely allow concluding that the tail is exactly exponential.
+ 
+\end_layout
+
+\begin_layout Standard
+Finally, we note that removing the assumption that all moments of 
+\begin_inset Formula $f$
+\end_inset
+
+ exist will remove the upper bound but not the exponential lower bound.
+ Furthermore, if the 
+\begin_inset Formula $k$
+\end_inset
+
+'th moment of 
+\begin_inset Formula $f$
+\end_inset
+
+ is infinite, then the 
+\begin_inset Formula $k$
+\end_inset
+
+'th moment of 
+\begin_inset Formula $H$
+\end_inset
+
+ will be as well, suggesting a tail 
+\begin_inset Formula $H(W)\approx W^{-k-1}$
+\end_inset
+
+; indeed, the moment will diverge at finite times.
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "app:examples"
+
+\end_inset
+
+Applications of the Klein inversion formula
+\end_layout
+
+\begin_layout Subsection*
+Delta distribution
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $H(W)=\delta(W-1)$
+\end_inset
+
+ then 
+\begin_inset Formula $\phi(u)=e^{iu}$
+\end_inset
+
+ and 
+\begin_inset Formula $h(t)=e^{ie^{t}}$
+\end_inset
+
+, thus 
+\begin_inset Formula $\tilde{h}(\omega)=e^{\pi\omega/2}\Gamma\left(-i\omega\right)$
+\end_inset
+
+, defined for 
+\begin_inset Formula $0<\Im(\omega)<1$
+\end_inset
+
+.
+ For 
+\begin_inset Formula 
+\[
+f(s)=\sum_{k=1}^{\infty}p_{k}s^{k}
+\]
+
+\end_inset
+
+ (notice that we do not have a constant term), 
+\begin_inset Formula 
+\[
+\widetilde{f\odot h}(\omega)=e^{\pi\omega/2}\Gamma\left(-i\omega\right)\sum_{k=1}^{\infty}p_{k}k^{i\omega}
+\]
+
+\end_inset
+
+defined on the same strip.
+ The quotient is then well defined:
+\begin_inset Formula 
+\[
+\tilde{g}(\omega)=\frac{1}{\sum_{k=1}^{\infty}p_{k}k^{i\omega}}.
+\]
+
+\end_inset
+
+If only one 
+\begin_inset Formula $p_{k}$
+\end_inset
+
+ is non-zero (and therefore equal to one), we would have a well-defined
+ distribution
+\begin_inset Formula 
+\[
+g(t)=\delta(t-\ln k),
+\]
+
+\end_inset
+
+which reproduces the trivial result that a discrete time Markovian process
+ with fixed outcomes in each division necessarily leads to a Dirac distribution
+ as the limit.
+ For a more generic 
+\begin_inset Formula $f$
+\end_inset
+
+ it does not lead to a probability distribution.
+\end_layout
+
+\begin_layout Subsection*
+Exponential tailed distributions
+\end_layout
+
+\begin_layout Standard
+As conjectured, the tail of 
+\begin_inset Formula $H$
+\end_inset
+
+ is always exponential.
+ With the integral above we can consider the very general class
+\begin_inset Formula 
+\[
+H(W)=p(W)e^{-\lambda W}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $p(z)=\sum_{k}a_{k}z^{k}$
+\end_inset
+
+ is any polynomial which is non-negative on the non-negative reals.
+ The characteristic function is very helpfully just a sum
+\begin_inset Formula 
+\[
+\phi(u)=\sum_{k}a_{k}k!\left(\lambda-iu\right)^{-k-1}.
+\]
+
+\end_inset
+
+Importantly, 
+\begin_inset Formula $f\odot\phi$
+\end_inset
+
+ has the same structure, composed of a linear combination of 
+\begin_inset Formula $(\lambda-iu)^{-n}$
+\end_inset
+
+.
+ Thus we only have to consider a single integral (convergent on 
+\begin_inset Formula $-k-1<\Im\{\omega\}<0$
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+ & \int_{-\infty}^{\infty}e^{i\omega t}\left(\lambda-ie^{t}\right)^{-k-1}dt\\
+= & \lambda^{i\omega-k-1}\int_{0}^{\infty}z^{i\omega-1}(1-iz)^{-k-1}dz\\
+= & \lambda^{i\omega-k-1}e^{-\pi\omega/2}\frac{\Gamma\left(1+k-i\omega\right)\Gamma\left(i\omega\right)}{\Gamma(1+k)}\\
+= & \lambda^{i\omega-k-1}e^{-\pi\omega/2}\frac{\left(1-i\omega\right)_{k}\Gamma(1-i\omega)\Gamma\left(i\omega\right)}{\Gamma(1+k)}
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula $\left(z\right)_{n}$
+\end_inset
+
+ is the Pochhammer symbol.
+ In 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:backward-eq"
+
+\end_inset
+
+, upon taking the quotient most factors above cancel.
+ Define the auxiliary polynomials 
+\begin_inset Formula $P(z)=\sum_{k}a_{k}k!z^{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $Q(z)=\frac{1}{z}f\left[zP(z)\right]$
+\end_inset
+
+ and a transform on polynomials defined by being linear and acts on each
+ monomial as 
+\begin_inset Formula 
+\[
+\widehat{z^{k}}\Longrightarrow\frac{\lambda^{-k}(1+z)_{k}}{\Gamma(1+k)}.
+\]
+
+\end_inset
+
+Then by linearity we immediately get
+\begin_inset Formula 
+\[
+\tilde{g}(\omega)=\frac{\widehat{P}(-i\omega)}{\widehat{Q}(-i\omega)}.
+\]
+
+\end_inset
+
+We can find 
+\begin_inset Formula $g(t)$
+\end_inset
+
+ by applying the Heaviside formula to 
+\begin_inset Formula $\tilde{g}(iz)$
+\end_inset
+
+ (treating it as an inverse Laplace transform), and generically it will
+ be a sum of exponentials (possibly with complex exponents, but always occurring
+ in conjugate pairs); note that whilst there cannot be any poles on the
+ negative imaginary line, generically there may be poles on the lower half
+ plane.
+ Below, we will try and give some simple cases where this can be done and
+ it yields proper cell cycle distributions.
+\end_layout
+
+\begin_layout Standard
+The simplest case is 
+\begin_inset Formula $H(W)=e^{-W}$
+\end_inset
+
+ which corresponds to 
+\begin_inset Formula $p(z)=1$
+\end_inset
+
+, 
+\begin_inset Formula $\lambda=1$
+\end_inset
+
+, and 
+\begin_inset Formula $P(z)=1$
+\end_inset
+
+, 
+\begin_inset Formula $Q(z)=\frac{1}{z}f(z)$
+\end_inset
+
+.
+ Thus,
+\begin_inset Formula 
+\[
+\tilde{g}(\omega)=\frac{1}{\sum_{k}p_{k}(1-i\omega)_{k-1}/\Gamma(k)}.
+\]
+
+\end_inset
+
+If only one 
+\begin_inset Formula $p_{k}$
+\end_inset
+
+ is non-zero, then
+\begin_inset Formula 
+\[
+g(t)=(k-1)e^{-(k-1)t}\left(e^{t}-1\right)^{k-2}.
+\]
+
+\end_inset
+
+In particular this reproduces the result that for binary fission (
+\begin_inset Formula $k=2$
+\end_inset
+
+) the Markovian process (
+\begin_inset Formula $g(t)=e^{-t}$
+\end_inset
+
+) gives an exponential distribution in the limit.
+ Biologically cells can only divide into two, so we can consider 
+\begin_inset Formula $f(z)=(1-r)z+rz^{2}.$
+\end_inset
+
+ In that case, 
+\begin_inset Formula 
+\[
+g(t)=\frac{1}{r}e^{-t/r},
+\]
+
+\end_inset
+
+ which is again Markovian, and, in hindsight obvious.
+\end_layout
+
+\begin_layout Standard
+Another simple case is when 
+\begin_inset Formula $H$
+\end_inset
+
+ is a 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+-distribution; in that case, 
+\begin_inset Formula $p(z)=\frac{\beta^{\beta}}{(\beta-1)!}z^{\beta-1}$
+\end_inset
+
+, 
+\begin_inset Formula $\lambda=\beta$
+\end_inset
+
+ so 
+\begin_inset Formula $P(z)=\beta^{\beta}z^{\beta-1}$
+\end_inset
+
+ and 
+\begin_inset Formula $Q(z)=\frac{1}{z}f\left(\beta^{\beta}z^{\beta}\right)$
+\end_inset
+
+.
+ We get
+\begin_inset Formula 
+\begin{align*}
+\tilde{g}(\omega) & =\frac{\frac{\beta^{\beta}\beta^{-\beta+1}}{\Gamma(\beta)}(1-i\omega)_{\beta-1}}{\sum_{k}p_{k}\frac{\beta^{k\beta}\beta^{-k\beta+1}}{\Gamma(k\beta)}(1-i\omega)_{k\beta-1}}\\
+ & =\left[\sum_{k}p_{k}\frac{(\beta-i\omega)_{(k-1)\beta}}{(\beta)_{(k-1)\beta}}\right]^{-1}.
+\end{align*}
+
+\end_inset
+
+If only one 
+\begin_inset Formula $p_{k}$
+\end_inset
+
+ is non-zero then the poles are simple and line on the positive imaginary
+ axis, and furthermore 
+\begin_inset Formula $g(t)$
+\end_inset
+
+ is positive:
+\begin_inset Formula 
+\[
+g(t)=\frac{\Gamma(k\beta)}{\Gamma(\beta)\Gamma\left[(k-1)\beta\right]}e^{-(k\beta-1)t}\left(e^{t}-1\right)^{(k-1)\beta-1}.
+\]
+
+\end_inset
+
+Note that this reproduces, in appropriate limits, the results above for
+ 
+\begin_inset Formula $H(W)=e^{-W}$
+\end_inset
+
+ and 
+\begin_inset Formula $H(W)=\delta(W-1)$
+\end_inset
+
+.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:H-gamma"
+
+\end_inset
+
+ shows some examples from this family.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement t
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename gamma-inverse.pdf
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:H-gamma"
+
+\end_inset
+
+Cell cycle distributions that gives 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+-distributions with shape parameter 
+\begin_inset Formula $\beta$
+\end_inset
+
+ as limit distributions, when each cell divides exactly into 
+\begin_inset Formula $k$
+\end_inset
+
+ at the end of its life.
+ In blue we show the variation as 
+\begin_inset Formula $k=2,3,\ldots,50$
+\end_inset
+
+ for fixed 
+\begin_inset Formula $\beta=3$
+\end_inset
+
+.
+ The two red series show variation of 
+\begin_inset Formula $\beta=1,\ldots,9$
+\end_inset
+
+ for 
+\begin_inset Formula $k=4$
+\end_inset
+
+ and 
+\begin_inset Formula $k=20$
+\end_inset
+
+.
+ In thick black, we show the intersections 
+\begin_inset Formula $k=4,\ \beta=3$
+\end_inset
+
+ and 
+\begin_inset Formula $k=20,\ \beta=3$
+\end_inset
+
+.
+ As 
+\begin_inset Formula $k\rightarrow\infty$
+\end_inset
+
+ the distributions approach a Dirac delta distribution, with mean 
+\begin_inset Formula $\ln k$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We note that the above is well-defined for all positive real 
+\begin_inset Formula $\beta$
+\end_inset
+
+, not only positive integers.
+ In addition, for 
+\begin_inset Formula $k=2$
+\end_inset
+
+, it produces a family of distributions which when scaled to have unit mean
+ is well-approximated by the 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+-distributions 
+\begin_inset Formula $\beta^{\beta}e^{-\beta t}t^{\beta-1}/\Gamma(\beta)$
+\end_inset
+
+.
+ Lastly, for 
+\begin_inset Formula $\beta=1/(k-1)$
+\end_inset
+
+, we get an exponential distribution for 
+\begin_inset Formula $g$
+\end_inset
+
+, thus solving the Markovian problem for branching with a single 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+More generically, it becomes very difficult to find the conditions such
+ that the Klein formula is well-defined.
+ Consider even the restricted case that 
+\begin_inset Formula $f(z)=(1-r)z+rz^{2}$
+\end_inset
+
+, i.e.
+ a generic biologically sensible branching process, starting with a 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+-distribution:
+\begin_inset Formula 
+\[
+\tilde{g}\left(\omega\right)=\left[(1-r)+r\frac{\left(\beta-i\omega\right)_{\beta}}{\left(\beta\right)_{\beta}}\right]^{-1}.
+\]
+
+\end_inset
+
+Starting with 
+\begin_inset Formula $\beta=2$
+\end_inset
+
+, we find 
+\begin_inset Formula 
+\[
+g(t)=\frac{6e^{-\frac{1}{2}\left(5+\sqrt{25-\frac{24}{r}}\right)t}\left(-1+e^{\sqrt{25-\frac{24}{r}}t}\right)}{\sqrt{r(-24+25r)}}
+\]
+
+\end_inset
+
+which is only positive everywhere if 
+\begin_inset Formula $r>24/25$
+\end_inset
+
+, in which case all exponents are real.
+ However, for 
+\begin_inset Formula $\beta=3$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+g(t)=\frac{60\left[\omega_{1}\left(e^{t\omega_{2}}-e^{t\omega_{3}}\right)+\omega_{2}\left(e^{t\omega_{3}}-e^{t\omega_{1}}\right)+\omega_{3}\left(e^{t\omega_{1}}-e^{t\omega_{2}}\right)\right]}{r\left(\omega_{1}-\omega_{2}\right)\left(\omega_{2}-\omega_{3}\right)\left(\omega_{3}-\omega_{1}\right)}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\omega_{1,2,3}$
+\end_inset
+
+ are the three roots to the cubic 
+\begin_inset Formula $60+47rz+12rz^{2}+rz^{3}=0$
+\end_inset
+
+.
+ All three roots have negative real parts for 
+\begin_inset Formula $r\gtrsim0.106383$
+\end_inset
+
+ but 
+\begin_inset Formula $g(t)$
+\end_inset
+
+ is not real for most of that.
+ Indeed, only for 
+\begin_inset Formula $r>\frac{90\left(270-\sqrt{3}\right)}{24299}\approx0.993626$
+\end_inset
+
+ are all three roots real.
+ Numerically, it seems that only if all three roots are real is 
+\begin_inset Formula $g(t)$
+\end_inset
+
+ well-defined.
+ By similar arguments, for 
+\begin_inset Formula $\beta=4$
+\end_inset
+
+ we find that 
+\begin_inset Formula $r>\frac{840}{841}$
+\end_inset
+
+; and for 
+\begin_inset Formula $\beta=5$
+\end_inset
+
+, 
+\begin_inset Formula $r\gtrsim0.999906$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "everything"
+options "apsrev4-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
