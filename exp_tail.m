@@ -17,5 +17,13 @@ function gtilde = exp_tail(pks, aks)
     Qks = Qks(2:end); %1/z
     
     gtilde = @(ws) arrayfun(@(w) hat(aks, -1.0i * w) ./ hat(Qks, -1.0i * w), ws);
+    
+    % show what the distribution actually looks like
+    ks = 0:(numel(aks)-1);
+    lambda = sum(aks .* (ks+1));
+    
+    ts = linspace(0,5,200);
+    H = arrayfun(@(t) sum(aks .* lambda.^(ks+1) .* t.^ks ./ gamma(ks+1)) .* exp(-lambda * t), ts);
+    plot(newplot(figure), ts, H, ts, exp(-ts));
 
 end
