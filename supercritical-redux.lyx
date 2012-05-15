@@ -449,8 +449,8 @@ reference "eq:forwards-eq"
 \begin_inset Formula $H(W)$
 \end_inset
 
- is bounded from above by any power-law decay, and conjecture that it is
- in fact exponential (appendix 
+ is bounded from above by any power-law decay and from below by an exponential,
+ and conjecture that it is in fact exactly exponential (appendix 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "app:moment-theorems"
@@ -1200,11 +1200,9 @@ and since
 \end_layout
 
 \begin_layout Standard
-We now outline a plausible argument that the tails are also bounded from
- below by an exponential.
- Although we do not have proofs, it seems reasonable that some morally similar
- statements must be true.
- First, it seems plausible that if two non-negative variables 
+We now outline an argument that the tails are also bounded from below by
+ an exponential.
+ First, generally if two non-negative variables 
 \begin_inset Formula $W_{1}$
 \end_inset
 
@@ -1212,7 +1210,7 @@ We now outline a plausible argument that the tails are also bounded from
 \begin_inset Formula $W_{2}$
 \end_inset
 
- with unity mean, have moments obeying
+ have moments obeying
 \begin_inset Formula 
 \[
 \mathbb{E}\left[W_{1}^{n}\right]\ge\mathbb{E}\left[W_{2}^{n}\right]
@@ -1235,7 +1233,7 @@ We now outline a plausible argument that the tails are also bounded from
  
 \begin_inset Formula 
 \[
-\mathbb{P}\left[W_{1}>w\right]>\mathbb{P}\left[W_{2}>w\right].
+\mathbb{P}\left[W_{1}>w\right]\ge\mathbb{P}\left[W_{2}>w\right].
 \]
 
 \end_inset
@@ -1310,39 +1308,48 @@ reference "eq:moment-recursion"
 \end_inset
 
  is positive.
- We can think of this as a new branching process for which that recurrence
- relation is exact, which corresponds to a binary fission process with possible
- death.
- That process has moments 
-\begin_inset Formula $M_{n}^{\star}=n!\xi(n)$
+ Defining 
+\begin_inset Formula $\xi(n)=M_{n}/n!$
 \end_inset
 
- with
+ we have
 \begin_inset Formula 
 \[
-\xi(n)=\sum_{k=1}^{n-1}\xi(k)\xi(n-k)\frac{f^{\prime\prime}(1)\int_{0}^{\infty}e^{-ny}g(y)\, dy}{1-f^{\prime}(1)\int_{0}^{\infty}e^{-ny}g(y)\, dy}.
+\xi(n)\ge\sum_{k=1}^{n-1}\xi(k)\xi(n-k)K_{n},
 \]
 
 \end_inset
 
- Asymptotically, 
-\begin_inset Formula $\int_{0}^{\infty}e^{-ny}g(y)\, dy\in\Omega\left(e^{-cn}\right)$
+where 
+\begin_inset Formula 
+\begin{align*}
+K_{n} & =\frac{f^{\prime\prime}(1)\int_{0}^{\infty}e^{-ny}g(y)\, dy}{1-f^{\prime}(1)\int_{0}^{\infty}e^{-ny}g(y)\, dy}\\
+ & >\frac{f^{\prime\prime}(1)}{1-f^{\prime}(1)\int_{0}^{\infty}e^{-2y}g(y)\, dy}\int_{0}^{\infty}e^{-ny}g(y)\, dy\\
+ & \ge C\eta^{-n}
+\end{align*}
+
 \end_inset
 
- for some 
-\begin_inset Formula $c$
+for some 
+\begin_inset Formula $C$
 \end_inset
 
-, thus 
-\begin_inset Formula $\xi$
+ and 
+\begin_inset Formula $\eta$
 \end_inset
 
- is bounded from below by an exponential.
- Thus, we conclude that the process with moments 
-\begin_inset Formula $M_{n}^{\star}$
+.
+ Using the equality we can convert this into a lower bound 
+\begin_inset Formula 
+\[
+M_{n}\ge\frac{n!}{C\eta^{n}}
+\]
+
 \end_inset
 
- has an exponential tail.
+which by the above gives an exponential tail.
+ Thus, we conclude that the tail of a limit distribution is exponentially
+ bounded.
 \end_layout
 
 \begin_layout Standard
