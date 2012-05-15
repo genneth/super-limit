@@ -805,9 +805,9 @@ reference "fig:g-power-limits"
 
  shows the limit distributions for binary fission with the family 
 \begin_inset Formula 
-\[
-g(t)=\frac{\mathrm{sinc}\left(\frac{n}{\pi}\right)}{1+\left(t-\frac{1}{2}\right)^{n}}\Theta\left(t-\frac{1}{2}\right),\ n\ge2.
-\]
+\begin{equation}
+g(t)=\frac{\mathrm{sinc}\left(\frac{n}{\pi}\right)}{1+\left(t-\frac{1}{2}\right)^{n}}\Theta\left(t-\frac{1}{2}\right),\ n\ge2.\label{eq:power-law-g}
+\end{equation}
 
 \end_inset
 
@@ -1493,7 +1493,7 @@ where normalisation requires
 \begin_inset Formula $\sum_{k}a_{k}(k+1)/\lambda=1$
 \end_inset
 
-.
+, though as we shall see the latter will be automatically enforced.
  The characteristic function is very helpfully just a sum
 \begin_inset Formula 
 \[
@@ -1567,7 +1567,16 @@ Then by linearity we immediately get
 
 \end_inset
 
-We can find 
+Notice that the formula above is completely independent of 
+\begin_inset Formula $\lambda$
+\end_inset
+
+; the correct one such that 
+\begin_inset Formula $H(W)$
+\end_inset
+
+ has mean of unity will be chose.
+ We can find 
 \begin_inset Formula $g(t)$
 \end_inset
 
@@ -1577,9 +1586,17 @@ We can find
 
  (treating it as an inverse Laplace transform), and generically it will
  be a sum of exponentials (possibly with complex exponents, but always occurring
- in conjugate pairs); note that whilst there cannot be any poles on the
- negative imaginary line, generically there may be poles on the lower half
- plane.
+ in conjugate pairs), determined by the locations of zeros of 
+\begin_inset Formula $\hat{Q}$
+\end_inset
+
+.
+ Note that whilst 
+\begin_inset Formula $\hat{Q}(z)$
+\end_inset
+
+ cannot have any zeros on the positive real line, generically there may
+ be zeros on the right half plane.
  Below, we will try and give some simple cases where this can be done and
  it yields proper cell cycle distributions.
 \end_layout
@@ -1911,7 +1928,7 @@ where
 \begin_inset Formula $g(t)$
 \end_inset
 
- is not real for most of that.
+ is not positive for most of that.
  Indeed, only for 
 \begin_inset Formula $r>\frac{90\left(270-\sqrt{3}\right)}{24299}\approx0.993626$
 \end_inset
@@ -1939,6 +1956,149 @@ where
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+The example above required that the poles of 
+\begin_inset Formula $\tilde{g}$
+\end_inset
+
+ lay only on the imaginary axis, but this is not necessary.
+ Consider binary fission, 
+\begin_inset Formula $f(z)=z^{2}$
+\end_inset
+
+, and a multi-modal 
+\begin_inset Formula $P(z)=r+(1-r)z^{3}$
+\end_inset
+
+.
+ The denominator 
+\begin_inset Formula $Q(z)$
+\end_inset
+
+ is of order 7.
+ The roots are all real for 
+\begin_inset Formula $r\apprle9.164\times10^{-4}$
+\end_inset
+
+ and five real roots for 
+\begin_inset Formula $r\apprle0.07036$
+\end_inset
+
+.
+ However, as 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:multi-modal"
+
+\end_inset
+
+ shows, there exist well-behaved solutions for 
+\begin_inset Formula $r\apprle0.35$
+\end_inset
+
+, which can be interestingly multi-modal.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename multi-modal.pdf
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:multi-modal"
+
+\end_inset
+
+Main figure shows the cell cycle distribution which gives the limit distribution
+ in the inset.
+ Blue is for 
+\begin_inset Formula $H(W)=\left[r+(1-r)z^{3}W^{3}\lambda^{4}/\Gamma(4)\right]e^{-\lambda W}$
+\end_inset
+
+ where 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is such that 
+\begin_inset Formula $\int W\, H(W)\, dW=1$
+\end_inset
+
+ and 
+\begin_inset Formula $r=0.35$
+\end_inset
+
+.
+ Green is a comparison with the power-law tailed distribution from 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:power-law-g"
+
+\end_inset
+
+ with 
+\begin_inset Formula $n=2.1$
+\end_inset
+
+.
+ For 
+\begin_inset Formula $r\apprge0.35$
+\end_inset
+
+ the dip in 
+\begin_inset Formula $g(t)$
+\end_inset
+
+ becomes pronounced enough that it become negative.
+ For 
+\begin_inset Formula $r\rightarrow0$
+\end_inset
+
+ the distribution 
+\begin_inset Formula $g(t)$
+\end_inset
+
+ is well-defined, but for 
+\begin_inset Formula $r\rightarrow1$
+\end_inset
+
+ it is not, even though 
+\begin_inset Formula $r=1$
+\end_inset
+
+ it is well-defined.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
