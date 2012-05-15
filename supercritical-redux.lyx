@@ -1176,7 +1176,7 @@ where the right hand side only depends on the lower moments, and in particular
  Then
 \begin_inset Formula 
 \[
-1=\int_{0}^{\infty}f^{\prime}(1)e^{-y}g(y)\, dy<\int_{0}^{\infty}f^{\prime}(1)e^{-ny}g(y)\, dy
+1=\int_{0}^{\infty}f^{\prime}(1)e^{-y}g(y)\, dy>\int_{0}^{\infty}f^{\prime}(1)e^{-ny}g(y)\, dy
 \]
 
 \end_inset
