@@ -1195,7 +1195,8 @@ and since
 \end_inset
 
 .
- 
+ We conjecture that it is actually exponentially bounded, and show this
+ below for binary fission.
 \end_layout
 
 \begin_layout Standard
@@ -1211,7 +1212,7 @@ We now outline a plausible argument that the tails are also bounded from
 \begin_inset Formula $W_{2}$
 \end_inset
 
- have moments obeying
+ with unity mean, have moments obeying
 \begin_inset Formula 
 \[
 \mathbb{E}\left[W_{1}^{n}\right]\ge\mathbb{E}\left[W_{2}^{n}\right]
@@ -1224,10 +1225,14 @@ We now outline a plausible argument that the tails are also bounded from
 \end_inset
 
 , then there exists a 
-\begin_inset Formula $w$
+\begin_inset Formula $w_{0}$
 \end_inset
 
- such that 
+ such that for all 
+\begin_inset Formula $w>w_{0}$
+\end_inset
+
+ 
 \begin_inset Formula 
 \[
 \mathbb{P}\left[W_{1}>w\right]>\mathbb{P}\left[W_{2}>w\right].
@@ -1291,9 +1296,9 @@ reference "eq:moment-recursion"
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-\frac{M_{n}}{n!}\ge\sum_{k=1}^{n-1}\frac{M_{k}M_{n-k}}{k!(n-k)!}\frac{f^{\prime\prime}(1)\int_{0}^{\infty}e^{-ny}g(y)\, dy}{1-f^{\prime}(1)\int_{0}^{\infty}e^{-ny}g(y)\, dy}
-\]
+\begin{equation}
+\frac{M_{n}}{n!}\ge\sum_{k=1}^{n-1}\frac{M_{k}M_{n-k}}{k!(n-k)!}\frac{f^{\prime\prime}(1)\int_{0}^{\infty}e^{-ny}g(y)\, dy}{1-f^{\prime}(1)\int_{0}^{\infty}e^{-ny}g(y)\, dy}\label{eq:moments-lower-bound}
+\end{equation}
 
 \end_inset
 
@@ -1320,19 +1325,19 @@ reference "eq:moment-recursion"
 
 \end_inset
 
- Asymptotically, the Laplace transform of 
-\begin_inset Formula $g$
+ Asymptotically, 
+\begin_inset Formula $\int_{0}^{\infty}e^{-ny}g(y)\, dy\in\Omega\left(e^{-cn}\right)$
 \end_inset
 
- decays as 
-\begin_inset Formula $n\rightarrow\infty$
+ for some 
+\begin_inset Formula $c$
 \end_inset
 
- and thus 
+, thus 
 \begin_inset Formula $\xi$
 \end_inset
 
- is bounded by an exponential.
+ is bounded from below by an exponential.
  Thus, we conclude that the process with moments 
 \begin_inset Formula $M_{n}^{\star}$
 \end_inset
@@ -1341,17 +1346,71 @@ reference "eq:moment-recursion"
 \end_layout
 
 \begin_layout Standard
-Making proper estimates of the moments would allow applying the moments
- bound 
+In the case of binary fission, we can improve the upper bound slightly.
+ In particular, the equality in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:moments-lower-bound"
+
+\end_inset
+
+ applies.
+ An upper bound on the moments is then given by
+\begin_inset Formula 
+\[
+\frac{K_{2}M_{n}}{n!}\le\sum_{k=1}^{n-1}\frac{K_{2}M_{k}}{k!}\frac{K_{2}M_{n-k}}{(n-k)!}.
+\]
+
+\end_inset
+
+with equality for 
+\begin_inset Formula $n\le2$
+\end_inset
+
+, where 
+\begin_inset Formula 
+\[
+K_{2}=\frac{2\int_{0}^{\infty}e^{-2y}g(y)\, dy}{1-2\int_{0}^{\infty}e^{-2y}g(y)\, dy}.
+\]
+
+\end_inset
+
+We obtain an upper bound in terms of the Catalan numbers
+\begin_inset Formula 
+\[
+\frac{K_{2}M_{n}}{n!}\le\frac{K_{2}^{n}(2n-2)!}{(n-1)!n!}
+\]
+
+\end_inset
+
+Then applying the moments bound
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Philips1995"
 
 \end_inset
 
-, which in general produces exponential upper bounds for the tail, and would
- likely allow concluding that the tail is exactly exponential.
- 
+ we have
+\begin_inset Formula 
+\[
+\mathbb{P}\left[W>w\right]=\inf_{n}\frac{M_{n}}{w^{n}}\le\inf_{n}\frac{K_{2}^{n-1}(2n-2)!}{(n-1)!w^{n}},
+\]
+
+\end_inset
+
+which for large 
+\begin_inset Formula $w$
+\end_inset
+
+ gives 
+\begin_inset Formula 
+\[
+\mathbb{P}\left[W>w\right]=O\left(\frac{1}{w}\right)e^{-\frac{w}{4K_{2}}}.
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
